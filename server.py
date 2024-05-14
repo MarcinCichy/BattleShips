@@ -24,7 +24,8 @@ class Server:
                     print(f"Connected by {addr}")
                     command = conn.recv(self.srv_buff)
                     com = self.decode_received_data(command)
-                    result = menu.handler.use_command(com)
+                    # result = menu.handler.use_command(com)
+                    result = SystemUtilities.use_command(com)
                     conn.sendall(result.encode(server_data.ENCODE_FORMAT))
 
                     if "Connection" in result:

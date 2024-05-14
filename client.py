@@ -26,6 +26,7 @@ class Client:
                 return {"Error": "Unable to connect to server."}
 
     def input_command(self, command):
+        command = input("Command: ")
         encoded_command = self.serialize_command(command).encode(client_data.ENCODE_FORMAT)
         return encoded_command
 
@@ -45,3 +46,5 @@ def start(sent):
     client = Client(client_data.HOST, client_data.PORT, client_data.BUFFER_SIZE)
     transmit = client.client_connection(sent)
     return transmit
+
+start("")
