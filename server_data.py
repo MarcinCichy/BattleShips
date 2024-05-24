@@ -24,3 +24,12 @@ CLOSE = "close"
 # VERSION = "0.1.8"
 
 # ----------------------------------------------------
+ALLOWED_COMMAND = ("GAME_INVITATION", "SHOT", )
+
+# ----------------------------------------------------
+# 0 - OK wszystko w porządku
+# 1 - SERVER_BUSY serwer jest zajęty, ponieważ gra w inną grę
+# 2 - ILLEGAL_ARGUMENTS przesłano do serwera nieprawidłowe dane
+# 3 - INTERNAL_ERROR wewnętrzny błąd serwera, gra zostaje przerwana
+# 4 - BAD_REQUEST serwer nie potrafi rozpoznać żądania
+

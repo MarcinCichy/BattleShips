@@ -3,6 +3,7 @@ import socket
 import server_data
 # import menu
 from utils import SystemUtilities
+import server_data
 
 
 class Server:
@@ -23,9 +24,12 @@ class Server:
                 with conn:
                     print(f"Connected by {addr}")
                     command = conn.recv(self.srv_buff)
+                    print(command)
                     com = self.decode_received_data(command)
+                    print(com)
                     # result = menu.handler.use_command(com)
-                    result = SystemUtilities.use_command(com)
+                    result = com
+                    print(f"Result is: {result }")
                     conn.sendall(result.encode(server_data.ENCODE_FORMAT))
 
                     if "Connection" in result:
@@ -37,14 +41,16 @@ class Server:
     def decode_received_data(received_data):
         if received_data is None:
             SystemUtilities.unrecognised_command()
+
         else:
             decoded_data = json.loads(received_data)
-            if 'login' in decoded_data['command']:
-                print(f"Command received from Client: login")  # to hide showing login and password
-                return decoded_data["command"]
+            print(f"Command received from Client: {decoded_data['command']}")
+            if decoded_data in server_data.ALLOWED_COMMAND:
+                print(f"Command is correct")  # to hide showing login and password
+                return decoded_data
             else:
-                print(f"Command received from Client: {decoded_data['command']}")
-            return decoded_data["command"]
+                print("to dupa)")
+                return SystemUtilities.unrecognised_command()
 
 
 def start():
