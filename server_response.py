@@ -32,3 +32,10 @@ YOUR_INBOX_IS_FULL = " / Your Inbox is full"
 
 CONNECTION_CLOSE = {"Connection": "close"}
 UNRECOGNISED_COMMAND = {"Unrecognised command": "Please correct or type <help>."}
+
+# ----------------------------------------------------
+# 0 - OK wszystko w porządku
+# 1 - SERVER_BUSY serwer jest zajęty, ponieważ gra w inną grę
+# 2 - ILLEGAL_ARGUMENTS przesłano do serwera nieprawidłowe dane
+# 3 - INTERNAL_ERROR wewnętrzny błąd serwera, gra zostaje przerwana
+# 4 - BAD_REQUEST serwer nie potrafi rozpoznać żądania

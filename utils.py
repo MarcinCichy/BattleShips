@@ -43,22 +43,15 @@ class SystemUtilities:
             data = None
         if command in self.all_users_commands:
             match command:
-                case "login":
-                    self.username = data[0]['username']
-                    self.permissions = self.user_auth.get_permissions(self.username)
-                case "logout":
-                    data = self.username
-                    self.username = None
-                    self.permissions = None
-                case "help":
-                    data = self.permissions
-                case "msg-list":
-                    data = self.username
-                case "msg-del":
-                    data = {self.username: data}
-                case "msg-show":
-                    data = {self.username: data}
-                case "msg_count":
-                    data = self.username
+                case "GAME_INVITATION":
+                    pass
+                case "SHOT":
+                    pass
+                case "SHOT_REQUEST":
+                    pass
+                case "RESULT":
+                    pass
+                case "BOARD":
+                    pass
                 case _:
                     pass
