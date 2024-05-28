@@ -24,9 +24,7 @@ class Server:
                 with conn:
                     print(f"Connected by {addr}")
                     command = conn.recv(self.srv_buff)
-                    print(command)
                     com = self.decode_received_data(command)
-                    print(com)
                     # result = menu.handler.use_command(com)
                     result = com
                     print(f"Result is: {result }")
