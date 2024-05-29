@@ -1,7 +1,7 @@
 import socket
 import client_data
 import json
-import utils
+from utils import SystemUtilities
 
 
 
@@ -45,7 +45,7 @@ class Client:
 
 
 def start():
-    utils.SystemUtilities.clear_screen()
+    SystemUtilities.clear_screen()
     client = Client(client_data.HOST, client_data.PORT, client_data.BUFFER_SIZE)
     client.client_connection()
 
