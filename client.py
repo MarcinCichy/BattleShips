@@ -18,8 +18,10 @@ class Client:
             in_comm = self.input_command()
             s.sendall(in_comm)
             data = s.recv(self.srv_buff)
-            if self.decode_received_data(data) == "close":
-                break
+            received_data = self.decode_received_data(data)
+            # if self.decode_received_data(data) == client_data.CLOSE:
+            #     break
+            print(f'Server response: {received_data}')
 
     def input_command(self):
         command = input("Command: ")
@@ -28,20 +30,21 @@ class Client:
 
     def serialize_command(self, comm):
         comm_dict = {
-            "command": comm,
-            "name": "client_1"
+            "command": comm
         }
         comm_json = json.dumps(comm_dict)
         return comm_json
 
     def decode_received_data(self, data):
+        print(f'RECEIVED DATA FROM SERVER = {data}')
         decoded_data = json.loads(data)
         for key, value in decoded_data.items():
             if value == "is stopped":
                 print(key, value)
-                return "close"
+                return client_data.CLOSE
             else:
-                print(key, ':', value)
+                # print(key, ':', value)
+                return (key, ':', value)
 
 
 def start():

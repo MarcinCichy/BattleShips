@@ -32,11 +32,18 @@ class SystemUtilities:
 
     def game_invitation(self):
         print('GAME_INVITATION')
-    def shot(self):
-        print('SHOT')
+
+    @staticmethod
+    def shot():
+        shot_dict = {"SHOT": "was shot"}
+        shot_json = json.dumps(shot_dict)
+        return shot_json
+
     def shot_request(self):
         print('SHOT_REQUEST')
+
     def result(self):
         print('RESULT')
+
     def board(self):
         print('BOARD')
