@@ -4,7 +4,6 @@ import json
 from utils import SystemUtilities
 
 
-
 class Client:
     def __init__(self, srv_host, srv_port, srv_buff):
         self.srv_host = srv_host
@@ -19,8 +18,6 @@ class Client:
             s.sendall(in_comm)
             data = s.recv(self.srv_buff)
             received_data = self.decode_received_data(data)
-            # if self.decode_received_data(data) == client_data.CLOSE:
-            #     break
             print(f'Server response: {received_data}')
 
     def input_command(self):
@@ -36,15 +33,8 @@ class Client:
         return comm_json
 
     def decode_received_data(self, data):
-        print(f'RECEIVED DATA FROM SERVER = {data}')
         decoded_data = json.loads(data)
-        for key, value in decoded_data.items():
-            if value == "is stopped":
-                print(key, value)
-                return client_data.CLOSE
-            else:
-                # print(key, ':', value)
-                return (key, ':', value)
+        return decoded_data
 
 
 def start():

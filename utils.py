@@ -20,24 +20,19 @@ class SystemUtilities:
 
     @staticmethod
     def unrecognised_command():
-        un_comm_dict = server_response.UNRECOGNISED_COMMAND
-        un_comm_json = json.dumps(un_comm_dict)
-        return un_comm_json
+        return server_response.UNRECOGNISED_COMMAND
 
     @staticmethod
     def clear():
-        clear_dict = {"Clear": ""}
-        clear_json = json.dumps(clear_dict)
-        return clear_json
+        return {"Clear": ""}
 
-    def game_invitation(self):
-        print('GAME_INVITATION')
+    @staticmethod
+    def game_invitation():
+        return server_response.GAME_INVITATION_OK
 
     @staticmethod
     def shot():
-        shot_dict = {"SHOT": "was shot"}
-        shot_json = json.dumps(shot_dict)
-        return shot_json
+        return {"SHOT": "was shot"}
 
     def shot_request(self):
         print('SHOT_REQUEST')

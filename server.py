@@ -23,22 +23,18 @@ class Server:
                 with conn:
                     print(f"Connected by {addr}")
                     command = conn.recv(self.srv_buff)
-                    com = self.decode_received_data(command)
-                    result = self.use_command(com)
+                    com = self.decode_received_data(command).upper()
+                    result = self.serialize_data(self.use_command(com))
                     print(f'Result is: {result}')
-                    # result = com
                     conn.sendall(result.encode(server_data.ENCODE_FORMAT))
-
-                    if "Connection" in result:
-                        if (json.loads(result))["Connection"] == server_data.CLOSE:
-                            print("Server stopped")
-                            break
 
     def decode_received_data(self, data):
         decoded_data = json.loads(data)
         print(f"Command received from Client: {decoded_data['command']}.")
         return decoded_data['command']
-        # return decoded_data
+
+    def serialize_data(self, data):
+        return json.dumps(data)
 
     def use_command(self, comm):
         if comm in server_data.ALLOWED_COMMAND:

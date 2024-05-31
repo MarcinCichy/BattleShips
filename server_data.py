@@ -11,10 +11,6 @@ ENCODE_FORMAT = "utf-8"
 
 # ----------------------------------------------------
 
-CLOSE = "close"
-
-# ----------------------------------------------------
-
 ALLOWED_COMMAND = ("GAME_INVITATION", "SHOT", "SHOT_REQUEST", "RESULT", "BOARD")
 
 

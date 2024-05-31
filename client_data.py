@@ -11,10 +11,3 @@ ENCODE_FORMAT = "utf-8"
 
 # ----------------------------------------------------
 
-CLOSE = "close"
-
-# --------------- CONSOLE CONFIGURATION --------------
-
-CONSOLE_TITLE = 'Client Server System'
-
-# ----------------------------------------------------

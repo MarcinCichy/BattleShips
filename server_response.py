@@ -55,6 +55,15 @@ BAD_REQUEST = {
   "body": None
 }
 
+SHOT_OK = {
+  "type":"SHOT",
+  "body":{
+    "row":"A",
+    "column":2
+  }
+}
+
+
 
 # ----------------------------------------------------
 # 0 - OK wszystko w porządku
