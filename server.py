@@ -3,6 +3,7 @@ import socket
 from utils import SystemUtilities
 import json
 import server_data
+import server_response
 
 
 class Server:
@@ -50,8 +51,7 @@ class Server:
                 case "BOARD":
                     return SystemUtilities.board()
         else:
-            return SystemUtilities.unrecognised_command()
-
+            return server_response.BAD_REQUEST
 
 def start():
     SystemUtilities.clear_screen()

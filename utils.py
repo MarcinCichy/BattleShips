@@ -21,10 +21,7 @@ class SystemUtilities:
     @staticmethod
     def unrecognised_command():
         return server_response.UNRECOGNISED_COMMAND
-
-    @staticmethod
-    def clear():
-        return {"Clear": ""}
+# -----------------------------------------------------------------------------------------
 
     @staticmethod
     def game_invitation():
