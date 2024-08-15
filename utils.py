@@ -27,8 +27,8 @@ class SystemUtilities:
     def game_invitation():
         return server_response.GAME_INVITATION_OK
 
-    @staticmethod
-    def shot():
+
+    def shot(self):
         return {"SHOT": "was shot"}
 
     def shot_request(self):
