@@ -18,9 +18,6 @@ class SystemUtilities:
         else:
             _ = system("clear")
 
-    @staticmethod
-    def unrecognised_command():
-        return server_response.UNRECOGNISED_COMMAND
 # -----------------------------------------------------------------------------------------
 
     @staticmethod

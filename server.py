@@ -53,6 +53,7 @@ class Server:
         else:
             return server_response.BAD_REQUEST
 
+
 def start():
     SystemUtilities.clear_screen()
     server = Server(server_data.HOST, server_data.PORT, server_data.BUFFER_SIZE)

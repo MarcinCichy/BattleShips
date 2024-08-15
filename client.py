@@ -4,7 +4,6 @@ import json
 from utils import SystemUtilities
 
 
-
 class Client:
     def __init__(self, srv_host, srv_port, srv_buff):
         self.srv_host = srv_host

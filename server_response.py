@@ -1,6 +1,4 @@
 # CONNECTION_CLOSE = {"Connection": "close"}
-UNRECOGNISED_COMMAND = {"Unrecognised command": "Please correct or type <help>."}
-
 
 GAME_INVITATION_OK = {
   "type": "GAME_INVITATION",

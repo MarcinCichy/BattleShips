@@ -25,3 +25,41 @@ BOARD = {
     "one": None
     }
 }
+
+
+BAD_REQUEST = {
+  "type": "UNKNOWN",
+  "status": 4,
+  "message": None,
+  "body": None
+}
+
+SHOT_OK = {
+  "type": "SHOT",
+  "status": 0,
+  "message": None,
+  "body": "HIT"
+}
+
+SHOT_MISS = {
+  "type": "SHOT",
+  "status": 0,
+  "message": None,
+  "body": "MISS"
+}
+
+SHOT_SINKING = {
+  "type": "SHOT",
+  "status": 0,
+  "message": None,
+  "body": "SINKING"
+
+}
+
+SHOT_ERROR = {
+  "type": "SHOT",
+  "status": 2,
+  "message": "The shot is not within the boundaries of the board.",
+  "body": None
+
+}
